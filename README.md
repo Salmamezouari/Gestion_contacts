@@ -1,32 +1,38 @@
-# Gestion de contacts (CRUD) - Laravel PHP
+# Gestion de contacts (CRUD) – Laravel PHP
 
-##  Objectif
-Mini-projet Laravel pour gérer des contacts : création, lecture, modification, suppression et recherche.
+## 🎯 Objectif
+Ce mini-projet a été réalisé avec Laravel.  
+Il permet de gérer une liste de contacts à travers les fonctionnalités principales :  
+ajout, affichage, modification, suppression et recherche de contacts.
 
-## Stack utilisée
+---
+
+## 🛠 Stack utilisée
 - **Backend :** PHP 8.x, Laravel 10.x  
 - **Base de données :** SQLite  
-- **Frontend :** Blade + Bootstrap 5  
+- **Frontend :** Blade (Laravel) + Bootstrap 5  
 - **Gestion des dépendances :** Composer  
+- **Versioning :** Git & GitHub  
 
 ---
 
-## Routes principales
+## 🔗 Routes principales
 
-| Route                  | Méthode | Description                        |
-|------------------------|---------|------------------------------------|
-| /                      | GET     | Redirige vers /contacts            |
-| /contacts              | GET     | Voir la liste des contacts         |
-| /contacts/create       | GET     | Formulaire pour ajouter un contact |
-| /contacts              | POST    | Ajouter un contact                 |
-| /contacts/{id}/edit    | GET     | Formulaire pour modifier un contact|
-| /contacts/{id}         | PUT     | Mettre à jour un contact           |
-| /contacts/{id}         | DELETE  | Supprimer un contact               |
+| Route               | Méthode | Description |
+|---------------------|---------|------------|
+| /                   | GET     | Redirection vers /contacts |
+| /contacts           | GET     | Affichage de la liste des contacts |
+| /contacts/create    | GET     | Formulaire d’ajout d’un contact |
+| /contacts           | POST    | Enregistrer un nouveau contact |
+| /contacts/{id}/edit | GET     | Formulaire de modification |
+| /contacts/{id}      | PUT     | Mettre à jour un contact |
+| /contacts/{id}      | DELETE  | Supprimer un contact |
 
 ---
 
-## Structure du projet
+## 📂 Structure du projet
 
+```text
 Gestion_contacts/
  ┣ 📂 app
  ┃ ┣ 📂 Http
@@ -34,6 +40,8 @@ Gestion_contacts/
  ┃ ┃   ┗ 📄 ContactController.php
  ┃ ┗ 📂 Models
  ┃   ┗ 📄 Contact.php
+ ┣ 📂 bootstrap
+ ┣ 📂 config
  ┣ 📂 database
  ┃ ┣ 📂 migrations
  ┃ ┃ ┗ 📄 xxxx_create_contacts_table.php
@@ -42,25 +50,26 @@ Gestion_contacts/
  ┃ ┣ 📂 factories
  ┃ ┃ ┗ 📄 UserFactory.php
  ┃ ┗ 📄 database.sqlite
- ┣ 📂 resources
- ┃ ┗ 📂 views
- ┃   ┣ 📂 contacts
- ┃   ┃ ┣ 📄 index.blade.php
- ┃   ┃ ┣ 📄 create.blade.php
- ┃   ┃ ┗ 📄 edit.blade.php
- ┃   ┗ 📂 layouts
- ┃     ┗ 📄 app.blade.php
- ┣ 📂 routes
- ┃ ┗ 📄 web.php
  ┣ 📂 public
  ┃ ┣ 📄 index.php
  ┃ ┣ 📄 favicon.ico
  ┃ ┗ 📄 robots.txt
+ ┣ 📂 resources
+ ┃ ┣ 📂 views
+ ┃ ┃ ┣ 📂 contacts
+ ┃ ┃ ┃ ┣ 📄 index.blade.php
+ ┃ ┃ ┃ ┣ 📄 create.blade.php
+ ┃ ┃ ┃ ┗ 📄 edit.blade.php
+ ┃ ┃ ┗ 📂 layouts
+ ┃ ┃   ┗ 📄 app.blade.php
+ ┣ 📂 routes
+ ┃ ┗ 📄 web.php
  ┣ 📂 storage
- ┣ 📂 bootstrap
- ┣ 📂 config
  ┣ 📂 tests
+ ┣ 📄 .env
  ┣ 📄 .env.example
  ┣ 📄 composer.json
+ ┣ 📄 composer.lock
  ┣ 📄 package.json
+ ┣ 📄 vite.config.js
  ┗ 📄 README.md
