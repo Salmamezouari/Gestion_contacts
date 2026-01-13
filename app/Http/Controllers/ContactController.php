@@ -7,12 +7,10 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    // ✅ Version avec recherche
     public function index(Request $request)
     {
         $query = Contact::query();
 
-        // Recherche si un mot-clé est fourni
         if ($request->has('search') && $request->search != '') {
             $search = $request->search;
             $query->where('nom', 'like', "%$search%")

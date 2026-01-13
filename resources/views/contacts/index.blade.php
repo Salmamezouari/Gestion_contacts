@@ -7,7 +7,6 @@
     Ajouter un contact
 </a>
 
-<!-- Formulaire de recherche -->
 <form action="{{ route('contacts.index') }}" method="GET" class="mb-3">
     <div class="input-group">
         <input type="text" name="search" class="form-control" placeholder="Rechercher un contact..." value="{{ request('search') }}">
