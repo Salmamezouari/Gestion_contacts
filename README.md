@@ -1,59 +1,127 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Gestion de contacts (CRUD) - Laravel PHP
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+##  Objectif
+Mini-projet Laravel pour gérer des contacts : création, lecture, modification, suppression et recherche.  
+---
 
-## About Laravel
+##  Stack utilisée
+- **Backend :** PHP 8.x, Laravel 10.x  
+- **Base de données :** SQLite   
+- **Frontend :** Blade + Bootstrap 5  
+- **Gestion des dépendances :** Composer  
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+##  Installation
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. **Cloner le projet**  :
+```bash
+git clone https://github.com/Salmamezouari/Gestion_contacts.git
+cd Gestion_contacts
+Installer les dépendances :
 
-## Learning Laravel
+composer install
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Copier le fichier .env.example en .env :
 
-## Laravel Sponsors
+cp .env.example .env
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-### Premium Partners
+Créer la base SQLite :
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+touch database/database.sqlite
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Configurer la connexion dans .env :
 
-## Code of Conduct
+DB_CONNECTION=sqlite
+DB_DATABASE=/full/path/to/database/database.sqlite
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+Générer la clé Laravel :
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+php artisan key:generate
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Lancer les migrations :
+
+php artisan migrate
+
+
+Démarrer le serveur local :
+
+php artisan serve
+
+
+Ouvre ton navigateur sur http://127.0.0.1:8000
+
+ Fonctionnalités
+
+Liste de tous les contacts
+
+Ajouter un contact
+
+Modifier un contact
+
+Supprimer un contact
+
+Rechercher un contact par nom, prénom ou email
+
+Messages de succès après chaque action
+
+Interface responsive grâce à Bootstrap 5
+
+ Routes principales
+Route	Méthode	Description
+/	GET	Redirige vers /contacts
+/contacts	GET	Liste tous les contacts
+/contacts/create	GET	Formulaire pour ajouter un contact
+/contacts	POST	Enregistrer un nouveau contact
+/contacts/{id}/edit	GET	Formulaire pour modifier un contact
+/contacts/{id}	PUT	Mettre à jour un contact
+/contacts/{id}	DELETE	Supprimer un contact
+
+ Structure du projet
+app/
+    Http/
+        Controllers/
+            ContactController.php
+    Models/
+        Contact.php
+database/
+    migrations/
+        xxxx_create_contacts_table.php
+resources/
+    views/
+        contacts/
+            index.blade.php
+            create.blade.php
+            edit.blade.php
+        layouts/
+            app.blade.php
+routes/
+    web.php
+.env.example
+composer.json
+composer.lock
+package.json
+README.md
+
+ Vues principales
+
+index.blade.php : liste des contacts avec boutons modifier/supprimer et formulaire de recherche
+
+create.blade.php : formulaire pour ajouter un contact
+
+edit.blade.php : formulaire pour modifier un contact existant
+
+layouts/app.blade.php : template de base avec Bootstrap 5
+
+ Recherche
+
+La barre de recherche permet de filtrer les contacts par nom, prénom ou email.
+Elle fonctionne directement depuis la page de listing.
+
+ Auteur
+
+Salma Mezouari
