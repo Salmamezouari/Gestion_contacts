@@ -1,8 +1,8 @@
 # Gestion de contacts (CRUD) – Laravel PHP
 
 ##  Objectif
-j'ai réalusé cette petite application avec Laravel PHP
-Il permet de gérer une liste de contacts à travers les fonctionnalités principales :  
+j'ai réalisé cette petite application avec Laravel PHP.
+Il permet de gérer une liste de contacts à travers ces  fonctionnalités principales :  
 ajout, affichage, modification, suppression et recherche de contacts.
 
 ---
