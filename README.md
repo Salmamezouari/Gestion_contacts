@@ -1,22 +1,22 @@
 # Gestion de contacts (CRUD) – Laravel PHP
 
-## 🎯 Objectif
-Ce mini-projet a été réalisé avec Laravel.  
+##  Objectif
+j'ai réalusé cette petite application avec Laravel PHP
 Il permet de gérer une liste de contacts à travers les fonctionnalités principales :  
 ajout, affichage, modification, suppression et recherche de contacts.
 
 ---
 
-## 🛠 Stack utilisée
+##  Stack utilisée
 - **Backend :** PHP 8.x, Laravel 10.x  
 - **Base de données :** SQLite  
 - **Frontend :** Blade (Laravel) + Bootstrap 5  
 - **Gestion des dépendances :** Composer  
-- **Versioning :** Git & GitHub  
+- **Versioning :** Git et GitHub  
 
 ---
 
-## 🔗 Routes principales
+##  Routes principales
 
 | Route               | Méthode | Description |
 |---------------------|---------|------------|
@@ -30,7 +30,7 @@ ajout, affichage, modification, suppression et recherche de contacts.
 
 ---
 
-## 📂 Structure du projet
+##  Structure du projet
 
 ```text
 Gestion_contacts/
@@ -44,7 +44,7 @@ Gestion_contacts/
  ┣ 📂 config
  ┣ 📂 database
  ┃ ┣ 📂 migrations
- ┃ ┃ ┗ 📄 xxxx_create_contacts_table.php
+ ┃ ┃ ┗ 📄 2026_01_13_103212_create_contacts_table.php
  ┃ ┣ 📂 seeders
  ┃ ┃ ┗ 📄 DatabaseSeeder.php
  ┃ ┣ 📂 factories
@@ -68,8 +68,13 @@ Gestion_contacts/
  ┣ 📂 tests
  ┣ 📄 .env
  ┣ 📄 .env.example
+ ┣ 📄 .editorconfig
+ ┣ 📄 .gitattributes
+ ┣ 📄 .gitignore
+ ┣ 📄 README.md
+ ┣ 📄 artisan
  ┣ 📄 composer.json
  ┣ 📄 composer.lock
  ┣ 📄 package.json
+ ┣ 📄 phpunit.xml
  ┣ 📄 vite.config.js
- ┗ 📄 README.md
